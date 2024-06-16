@@ -47,8 +47,8 @@ const CartServer = () => {
 
         updateProductQty(i._id, 'dec', i.quantity);
       });
-      // const session = await checkoutResponse.json();
-      // stripe?.redirectToCheckout({sessionId: session?.id});
+      const session = await checkoutResponse.json();
+      stripe?.redirectToCheckout({sessionId: session?.id});
     } catch (error) {
       console.log(error);
     }
