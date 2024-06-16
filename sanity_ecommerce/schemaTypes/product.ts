@@ -40,6 +40,9 @@ export default {
           if (value < 0) {
             return 'Quantity cannot be negative'
           }
+          if(value > 10){
+            return 'Quantity cannot be more than 10'
+          }
 
           return true
         }),
