@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 import { groq } from "next-sanity";
@@ -25,9 +26,9 @@ const HeroBanner: React.FC<Banner> = ({ ...bannerProps }) => {
         />
 
         <div>
-          <Link href={`/product/${product}`}>
-            <button type="button">{buttonText}</button>
-          </Link>
+          {/* <Link href={`/product/${product}`}> */}
+            <button type="button" onClick={()=>{}}>{buttonText}</button>
+          {/* </Link> */}
           <div className="desc">
             <h5>Description</h5>
             <p>{desc}</p>

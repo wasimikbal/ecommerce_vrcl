@@ -18,7 +18,7 @@ export default async function Home() {
 
       <div className="products-heading">
         <h2>Best Seller Products</h2>
-        <p>Speaker There are many variation packages</p>
+        <p>There are many variation packages</p>
         <div className='products-container'>
           {products?.map((product: ProductType) => <Product key={product._id}{...product} />)}
         </div>
