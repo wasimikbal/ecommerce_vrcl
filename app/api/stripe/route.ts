@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 import { Stripe } from "stripe";
 import { apiVersion } from "@/lib/env";
 
-const key = 'sk_test_51PQ1sjEkeq4Lo3yy3I39bsRZEI9iWltmVWxRy2dYEViDfgfPqBFgWqllxpXztPl4fUlnUO2sQGDe9aX4z2a3FdNH00Zjfr056e';
+const key = process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY
 
 const stripe = new Stripe(key, {
   apiVersion: '2024-04-10'
@@ -71,7 +71,7 @@ export async function POST(req:NextRequest) {
       success_url: `${req.headers.get("origin")}/success`,
       cancel_url: `${req.headers.get("origin")}/canceled`,
     });
-    return NextResponse.json(session.id);
+    return NextResponse.json({...session, id: session.id});
   } catch (err) {
     console.log(err);
     return NextResponse.json(err.message);
