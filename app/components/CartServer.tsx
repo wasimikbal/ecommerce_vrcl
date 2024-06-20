@@ -47,6 +47,7 @@ const CartServer = () => {
 
         updateProductQty(i._id, 'dec', i.quantity);
       });
+      toast.loading('Redirecting To Checkout ...')
       const session = await checkoutResponse.json();
       stripe?.redirectToCheckout({sessionId: session?.id});
     } catch (error) {
