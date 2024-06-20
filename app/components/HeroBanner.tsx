@@ -26,9 +26,9 @@ const HeroBanner: React.FC<Banner> = ({ ...bannerProps }) => {
         />
 
         <div>
-          {/* <Link href={`/product/${product}`}> */}
+          <Link href={`/product/${product.toLowerCase()}`}>
             <button type="button" onClick={()=>{}}>{buttonText}</button>
-          {/* </Link> */}
+          </Link>
           <div className="desc">
             <h5>Description</h5>
             <p>{desc}</p>
